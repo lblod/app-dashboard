@@ -9,7 +9,7 @@ x-logging:
 
 services:
   frontend:
-    image: lblod/frontend-dashboard:latest
+    image: lblod/frontend-dashboard:0.1.2
     links:
       - identifier:backend
     labels:
