@@ -63,11 +63,11 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
-  # frontend:
-  #   image: lblod/frontend-dashboard:latest
-  #   links:
-  #     - identifier:backend
-  #   labels:
-  #     - "logging=true"
-  #   restart: always
-  #   logging: *default-logging
+  frontend:
+    image: lblod/frontend-dashboard:latest
+    links:
+      - identifier:backend
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
