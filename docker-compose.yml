@@ -8,12 +8,18 @@ x-logging:
     max-file: "3"
 
 services:
+  frontend:
+    image: lblod/frontend-dashboard:latest
+    links:
+      - identifier:backend
+    labels:
+      - "logging=true"
+    restart: always
+    logging: *default-logging
   identifier:
     image: semtech/mu-identifier:1.6.1
     links:
       - dispatcher:dispatcher
-    ports:
-      - "80:80"
     labels:
       - "logging=true"
     restart: always
@@ -33,8 +39,6 @@ services:
     environment:
       SPARQL_UPDATE: "true"
       DEFAULT_GRAPH: "http://mu.semte.ch/application"
-    ports:
-      - "8890:8890"
     volumes:
       - ./data/db:/data
     labels:
@@ -59,14 +63,6 @@ services:
       MU_SPARQL_TIMEOUT: '300'
     volumes:
       - ./config/migrations:/data/migrations
-    labels:
-      - "logging=true"
-    restart: always
-    logging: *default-logging
-  frontend:
-    image: lblod/frontend-dashboard:latest
-    links:
-      - identifier:backend
     labels:
       - "logging=true"
     restart: always
