@@ -1,5 +1,5 @@
 INSERT DATA {
-  GRAPH <http://mu.semte.ch/graphs/public> {
+  GRAPH <http://mu.semte.ch/application> {
     <http://data.lblod.info/id/log-levels/0986a9b6-b543-4629-8ef8-08928ae42430> a <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#Level>;
        <http://mu.semte.ch/vocabularies/core/uuid> "0986a9b6-b543-4629-8ef8-08928ae42430";
        <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#priority> 1;

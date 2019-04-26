@@ -1,0 +1,60 @@
+PREFIX rlog: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+INSERT DATA {
+   GRAPH <http://mu.semte.ch/application> {
+      <http://data.lblod.info/id/log-entries/20dc4a20-67ff-11e9-83c8-eb9a3eb8a1ee> a rlog:Entry ;
+          <http://mu.semte.ch/vocabularies/core/uuid> "20dc4a20-67ff-11e9-83c8-eb9a3eb8a1ee" ;
+          dct:source <http://data.lblod.info/id/log-sources/c7806563-25a4-46c8-9be2-a0cdf0db1f98> ;
+          rlog:className <http://data.lblod.info/class-names/test-info> ;
+          rlog:message "This is an information about a test log" ;
+          rlog:date "2019-04-20T02:41:47.000Z"^^xsd:dateTime ;
+          rlog:level <http://data.lblod.info/id/log-levels/6f92baad-b4a1-42ce-8bdf-e28218b27ff9> ;
+          ext:specificInformation """{"sessionUri":"http://session/uri.test","kbonummer":"02345678"}""" .
+
+      <http://data.lblod.info/id/log-entries/dde6edfe-895d-4582-9217-17fde7427ac5> a rlog:Entry ;
+          <http://mu.semte.ch/vocabularies/core/uuid> "dde6edfe-895d-4582-9217-17fde7427ac5" ;
+          dct:source <http://data.lblod.info/id/log-sources/c7806563-25a4-46c8-9be2-a0cdf0db1f98> ;
+          rlog:className <http://data.lblod.info/class-names/no-bestuurseenheid-for-role> ;
+          rlog:message "User is not allowed to login. No bestuurseenheid found for roles Test" ;
+          rlog:date "2019-04-25T08:41:47.000Z"^^xsd:dateTime ;
+          rlog:level <http://data.lblod.info/id/log-levels/3af9ebe1-e6a8-495c-a392-16ced1f38ef1> ;
+          ext:specificInformation """{"sessionUri":"http://session/uri.test","kbonummer":"02345677"}""" .
+
+      <http://data.lblod.info/id/log-entries/bcb34788-3c96-4d17-ab40-4b7e2c853aec> a rlog:Entry ;
+          <http://mu.semte.ch/vocabularies/core/uuid> "bcb34788-3c96-4d17-ab40-4b7e2c853aec" ;
+          dct:source <http://data.lblod.info/id/log-sources/c7806563-25a4-46c8-9be2-a0cdf0db1f98> ;
+          rlog:className <http://data.lblod.info/class-names/no-bestuurseenheid-for-role> ;
+          rlog:message "User is not allowed to login. No bestuurseenheid found for roles Test" ;
+          rlog:date "2019-04-26T14:41:47.000Z"^^xsd:dateTime ;
+          rlog:level <http://data.lblod.info/id/log-levels/3af9ebe1-e6a8-495c-a392-16ced1f38ef1> ;
+          ext:specificInformation """{"sessionUri":"http://session/uri.test","kbonummer":"02345676"}""" .
+
+      <http://data.lblod.info/id/log-entries/701e4c3e-5673-4b5a-bb5f-73d18101ec5b> a rlog:Entry ;
+          <http://mu.semte.ch/vocabularies/core/uuid> "701e4c3e-5673-4b5a-bb5f-73d18101ec5b" ;
+          rlog:className <http://data.lblod.info/class-names/no-bestuurseenheid-for-role> ;
+          rlog:message "User is not allowed to login. No bestuurseenheid found for roles Test" ;
+          rlog:date "2019-03-26T08:41:47.000Z"^^xsd:dateTime ;
+          rlog:level <http://data.lblod.info/id/log-levels/3af9ebe1-e6a8-495c-a392-16ced1f38ef1> ;
+          ext:specificInformation """{"sessionUri":"http://session/uri.test","kbonummer":"02345675"}""" .
+
+      <http://data.lblod.info/id/log-entries/3023f8b5-38ce-4f44-86be-cc72acbcf04e> a rlog:Entry ;
+          <http://mu.semte.ch/vocabularies/core/uuid> "3023f8b5-38ce-4f44-86be-cc72acbcf04e" ;
+          dct:source <http://data.lblod.info/id/log-sources/c7806563-25a4-46c8-9be2-a0cdf0db1f98> ;
+          rlog:className <http://data.lblod.info/class-names/no-bestuurseenheid-for-role> ;
+          rlog:message "User is not allowed to login. No bestuurseenheid found for roles Test" ;
+          rlog:date "2019-04-06T08:41:47.000Z"^^xsd:dateTime ;
+          rlog:level <http://data.lblod.info/id/log-levels/3af9ebe1-e6a8-495c-a392-16ced1f38ef1> ;
+          ext:specificInformation """{"sessionUri":"http://session/uri.test","kbonummer":"02345674"}""" .
+
+      <http://data.lblod.info/id/log-entries/94f9d1f8-aca5-4297-9a37-7d2c0ce929c3> a rlog:Entry ;
+          <http://mu.semte.ch/vocabularies/core/uuid> "94f9d1f8-aca5-4297-9a37-7d2c0ce929c3" ;
+          dct:source <http://data.lblod.info/id/log-sources/c7806563-25a4-46c8-9be2-a0cdf0db1f98> ;
+          rlog:className <http://data.lblod.info/class-names/no-bestuurseenheid-for-role> ;
+          rlog:message "User is not allowed to login. No bestuurseenheid found for roles Test" ;
+          rlog:date "2019-04-16T08:41:47.000Z"^^xsd:dateTime ;
+          rlog:level <http://data.lblod.info/id/log-levels/3af9ebe1-e6a8-495c-a392-16ced1f38ef1> ;
+          ext:specificInformation """{"sessionUri":"http://session/uri.test","kbonummer":"02345673"}""" .
+    }
+}
