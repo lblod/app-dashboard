@@ -15,3 +15,5 @@ services:
     restart: "no"
   resource:
     restart: "no"
+  import:
+    restart: "no"
