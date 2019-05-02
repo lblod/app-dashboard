@@ -10,6 +10,8 @@ x-logging:
 services:
   frontend:
     image: lblod/frontend-dashboard:0.1.2
+    volumes:
+      - ./config/basic-auth:/etc/nginx/conf.d
     links:
       - identifier:backend
     labels:
