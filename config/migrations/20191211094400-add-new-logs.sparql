@@ -1,0 +1,42 @@
+PREFIX rlog: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+INSERT DATA {
+   GRAPH <http://mu.semte.ch/application> {
+      <http://data.lblod.info/id/log-entries/87A90D69-DB7C-478D-9955-BBAAB3AADD98> a rlog:Entry ;
+          <http://mu.semte.ch/vocabularies/core/uuid> "87A90D69-DB7C-478D-9955-BBAAB3AADD98" ;
+          dct:source <http://data.lblod.info/id/log-sources/c7806563-25a4-46c8-9be2-a0cdf0db1f98> ;
+          rlog:className <http://data.lblod.info/class-names/test-info> ;
+          rlog:message "This is a warn test log" ;
+          rlog:date "2019-12-11T07:01:00.000Z"^^xsd:dateTime ;
+          rlog:level <http://data.lblod.info/id/log-levels/62d2516b-e6b8-4866-aad1-e8347f2cdc70> ;
+          ext:specificInformation "This is the specific information about the warn log" .
+
+      <http://data.lblod.info/id/log-entries/12AC5BE3-12C3-4B7A-B6C9-3947905ADDD7> a rlog:Entry ;
+          <http://mu.semte.ch/vocabularies/core/uuid> "12AC5BE3-12C3-4B7A-B6C9-3947905ADDD7" ;
+          dct:source <http://data.lblod.info/id/log-sources/c7806563-25a4-46c8-9be2-a0cdf0db1f98> ;
+          rlog:className <http://data.lblod.info/class-names/no-bestuurseenheid-for-role> ;
+          rlog:message "Fatal error restarting the service" ;
+          rlog:date "2019-12-11T07:05:00.000Z"^^xsd:dateTime ;
+          rlog:level <http://data.lblod.info/id/log-levels/c679f915-1fdd-4b50-938d-6b565aa31278> ;
+          ext:specificInformation "Undefined is not a function" .
+
+      <http://data.lblod.info/id/log-entries/04872C91-C2A6-4EC9-8F8F-6516FE5D69D7> a rlog:Entry ;
+          <http://mu.semte.ch/vocabularies/core/uuid> "04872C91-C2A6-4EC9-8F8F-6516FE5D69D7" ;
+          dct:source <http://data.lblod.info/id/log-sources/c7806563-25a4-46c8-9be2-a0cdf0db1f98> ;
+          rlog:className <http://data.lblod.info/class-names/no-bestuurseenheid-for-role> ;
+          rlog:message "The variable a is equal to 'Cat'" ;
+          rlog:date "2019-12-11T07:14:00.000Z"^^xsd:dateTime ;
+          rlog:level <http://data.lblod.info/id/log-levels/fe6473d5-ac83-450c-83f8-3546357c7117> ;
+          ext:specificInformation "Executed in main" .
+
+      <http://data.lblod.info/id/log-entries/F86703F1-7F8E-4011-AD9C-0F302714F787> a rlog:Entry ;
+          <http://mu.semte.ch/vocabularies/core/uuid> "F86703F1-7F8E-4011-AD9C-0F302714F787" ;
+          rlog:className <http://data.lblod.info/class-names/no-bestuurseenheid-for-role> ;
+          rlog:message "This is a example trace log" ;
+          rlog:date "2019-12-11T08:29:28.000Z"^^xsd:dateTime ;
+          rlog:level <http://data.lblod.info/id/log-levels/0986a9b6-b543-4629-8ef8-08928ae42430> ;
+          ext:specificInformation "Main.js line 64" .
+    }
+}

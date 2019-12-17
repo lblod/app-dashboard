@@ -80,3 +80,8 @@ services:
       - "logging=true"
     restart: always
     logging: *default-logging
+  logService:
+    image: lblod/log-report-service:0.0.1
+    links:
+      - database:database
+

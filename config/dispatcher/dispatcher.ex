@@ -16,6 +16,23 @@ defmodule Dispatcher do
   # master-log-domain.lisp
   ###############################################################
 
+  match "/log-reports/*path" do
+     Proxy.forward conn, path, "http://resource/log-reports/"
+  end
+
+  match "/report-contents/*path" do
+     Proxy.forward conn, path, "http://resource/report-contents/"
+  end
+
+  match "/aggregates/*path" do
+     Proxy.forward conn, path, "http://resource/aggregates/"
+  end
+
+
+  match "/periods/*path" do
+    Proxy.forward conn, path, "http://resource/periods/"
+  end
+
   match "/log-entries/*path" do
     Proxy.forward conn, path, "http://resource/log-entries/"
   end
