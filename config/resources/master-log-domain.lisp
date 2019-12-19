@@ -10,6 +10,8 @@
                    :as "status-code")
               (log-source :via ,(s-prefix "dct:source")
                    :as "log-source"))
+  :has-many `((report-content :via ,(s-prefix "ext:belongsToReport")
+                   :as "report-content"))
   :resource-base (s-url "http://data.lblod.info/id/log-entries/")
   :features `(include-uri)
   :on-path "log-entries")
@@ -38,13 +40,13 @@
 
 (define-resource log-report ()
   :class (s-prefix "ext:LogReport")
-  :properties `((:creation-date :datetime ,(s-prefix "dct:created"))
-                (:author :string ,(s-prefix "dct:creator")))
-  :has-one `((report-content :via ,(s-prefix "ext:reportContent") :as "report-content"))
+  :properties `((:creation-date :datetime ,(s-prefix "dct:created")))
+  :has-one `((report-content :via ,(s-prefix "ext:reportContent") :as "report-content")
+              (agent :via ,(s-prefix "dct:creator") :as "author")
+              (period :via ,(s-prefix "ext:reportPeriod") :as "period"))
   :resource-base (s-url "http://data.lblod.info/id/log-reports/")
   :features `(include-uri)
   :on-path "log-reports")
-
 
 (define-resource report-content ()
   :class (s-prefix "ext:ReportContent")
@@ -56,9 +58,8 @@
 
 (define-resource aggregate ()
   :class (s-prefix "ext:Aggregate")
-  :properties `((:count :number ,(s-prefix "ext:logCount"))
-                (:type :string ,(s-prefix "skos:prefLabel"))
-  )
+  :properties `((:count :number ,(s-prefix "ext:logCount")))
+  :has-one `((log-level :via ,(s-prefix "ext:hasLogLevel") :as "log-level"))
   :has-many `((log-entry :via ,(s-prefix "ext:entries") :as "log-entry"))
   :resource-base (s-url "http://data.lblod.info/id/aggregates/")
   :features `(include-uri)
@@ -71,3 +72,9 @@
   :resource-base (s-url "http://data.lblod.info/id/periods/")
   :features `(include-uri)
   :on-path "periods")
+
+(define-resource agent ()
+  :class (s-prefix "dct:Agent")
+  :resource-base (s-url "http://data.lblod.info/id/agents/")
+  :features `(include-uri)
+  :on-path "agents")

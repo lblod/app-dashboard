@@ -1,0 +1,10 @@
+PREFIX rlog: <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/rlog#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX ext: <http://mu.semte.ch/vocabularies/ext/>
+
+INSERT DATA {
+   GRAPH <http://mu.semte.ch/application> {
+      <http://data.lblod.info/id/agents/F0572CB9-40F3-487A-9D44-BF6603F98F9A> a ext:Agent ;
+        <http://mu.semte.ch/vocabularies/core/uuid> "F0572CB9-40F3-487A-9D44-BF6603F98F9A" .
+    }
+}
